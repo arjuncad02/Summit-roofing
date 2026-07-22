@@ -319,40 +319,6 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
     drops.forEach(function(d){ctx.strokeStyle='rgba(200,220,240,'+d.o+')';ctx.lineWidth=1.1;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1.5,d.y+d.l);ctx.stroke();d.y+=d.v;d.x-=.4;if(d.y>H){d.y=-d.l;d.x=Math.random()*W;}});
     requestAnimationFrame(draw);})();
 })();
-loadThree(function(){
-  var cv=document.getElementById('house');if(!cv||!window.THREE)return;
-  var rn=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});rn.setPixelRatio(Math.min(devicePixelRatio,2));
-  var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);cam.position.set(6,3.6,8);cam.lookAt(0,1.2,0);
-  sc.add(new THREE.AmbientLight(0x9fb6cc,.7));
-  var key=new THREE.DirectionalLight(0xffffff,.85);key.position.set(5,10,6);sc.add(key);
-  var warm=new THREE.PointLight(0xff6b35,1.3,40);warm.position.set(-5,4,4);sc.add(warm);
-  var house=new THREE.Group();sc.add(house);
-  var wallMat=new THREE.MeshStandardMaterial({color:0xe8eef4,metalness:.05,roughness:.85});
-  var roofMat=new THREE.MeshStandardMaterial({color:0xff6b35,metalness:.3,roughness:.5});
-  var doorMat=new THREE.MeshStandardMaterial({color:0x132534,metalness:.2,roughness:.6});
-  /* body */
-  var body=new THREE.Mesh(new THREE.BoxGeometry(3.4,2,2.6),wallMat);body.position.y=1;house.add(body);
-  /* pitched roof: triangular prism via extruded shape */
-  var shape=new THREE.Shape();shape.moveTo(-2,0);shape.lineTo(2,0);shape.lineTo(0,1.5);shape.lineTo(-2,0);
-  var roof=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:2.8,bevelEnabled:false}),roofMat);
-  roof.rotation.y=Math.PI/2;roof.position.set(1.4,2,0);house.add(roof);
-  /* chimney */
-  var chim=new THREE.Mesh(new THREE.BoxGeometry(.4,1,.4),wallMat);chim.position.set(-.8,3,.4);house.add(chim);
-  /* door */
-  var door=new THREE.Mesh(new THREE.BoxGeometry(.7,1.2,.08),doorMat);door.position.set(0,.6,1.32);house.add(door);
-  /* windows */
-  var winMat=new THREE.MeshStandardMaterial({color:0x1b3247,metalness:.6,roughness:.2});
-  [[-1.1,1.1],[1.1,1.1]].forEach(function(p){var w=new THREE.Mesh(new THREE.BoxGeometry(.7,.7,.08),winMat);w.position.set(p[0],p[1],1.32);house.add(w);});
-  /* ground */
-  var ground=new THREE.Mesh(new THREE.CircleGeometry(4,32),new THREE.MeshStandardMaterial({color:0x0d1b2a,metalness:.1,roughness:.9}));
-  ground.rotation.x=-Math.PI/2;ground.position.y=0;sc.add(ground);
-  house.position.set(0,-.4,0);
-  var tmx=0,tmy=0;addEventListener('mousemove',function(e){tmx=(e.clientX/innerWidth-.5);tmy=(e.clientY/innerHeight-.5);});
-  function resize(){rn.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();}
-  resize();addEventListener('resize',resize);
-  (function anim(){requestAnimationFrame(anim);
-    house.rotation.y+=((0.5+tmx*0.7)-house.rotation.y)*.04;
-    house.position.y=-.4+Math.sin(performance.now()*.0012)*.06;
 });
 </script>
 </body>
