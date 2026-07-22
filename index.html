@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summit Roofing — Protecting Homes From The Top Down</title>
+<meta name="description" content="Premium residential and commercial roofing. Repairs, replacements, and emergency service backed by a lifetime workmanship warranty. Free estimates.">
+<meta property="og:title" content="Summit Roofing">
+<meta property="og:description" content="Protecting homes from the top down. Premium roofing, free estimates.">
+<meta name="theme-color" content="#0d1b2a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fallback.css">
+<style>
+:root{--navy:#0d1b2a;--navy2:#132534;--navy3:#1b3247;--sky:#e8eef4;--orange:#ff6b35;--orange2:#ff8659;--fg:#eaf0f6;--mute:#8ea3b8;--line:#213950;--ease:cubic-bezier(.22,1,.36,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--fg);font-family:"Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.dsp{font-family:"Sora",sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+::selection{background:var(--orange);color:#fff}
+#loader{position:fixed;inset:0;z-index:200;background:var(--navy);display:grid;place-items:center;transition:opacity .6s var(--ease),visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+.roof-draw{width:120px;height:70px;margin:0 auto}
+.roof-draw path{fill:none;stroke:var(--orange);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.3s var(--ease) .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.load-t{margin-top:22px;font-family:"Sora";font-weight:700;font-size:24px;letter-spacing:-.01em;opacity:0;animation:fu .7s var(--ease) .9s forwards;text-align:center}
+.load-t span{color:var(--orange)}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--orange);z-index:120}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(13,27,42,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Sora";font-weight:700;font-size:20px}
+.brand svg{width:32px;height:32px}
+.nlinks{display:flex;gap:34px;font-size:14px;color:var(--mute)}
+.nlinks a{position:relative;transition:color .2s}
+.nlinks a:hover{color:var(--fg)}
+.nlinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--orange);border-radius:2px;transition:width .3s var(--ease)}
+.nlinks a:hover::after{width:100%}
+.ncall{display:flex;align-items:center;gap:16px}
+.ncall .ph3{font-family:"Sora";font-weight:600;font-size:15px;color:var(--fg)}
+.ncta{background:var(--orange);color:#fff;padding:11px 22px;border-radius:30px;font-weight:600;font-size:14px;transition:.22s}
+.ncta:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,107,53,.4)}
+.burger{display:none;flex-direction:column;gap:5px}.burger span{width:24px;height:2px;background:var(--fg)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(13,27,42,.55),rgba(13,27,42,.9)),var(--bg-img,linear-gradient(160deg,#1b3247,#0d1b2a)) center/cover;animation:kb 22s ease-in-out infinite alternate}
+.hero-bg.bg-failed{background:linear-gradient(180deg,rgba(13,27,42,.4),rgba(13,27,42,.85)),linear-gradient(160deg,#1b3247,#0d1b2a 75%)}
+@keyframes kb{from{transform:scale(1.05)}to{transform:scale(1)}}
+#house{position:absolute;inset:0;z-index:1;pointer-events:none}
+#rain{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero .wrap{position:relative;z-index:3;width:100%;padding-top:80px}
+.badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;opacity:0;animation:fu .7s var(--ease) .2s forwards}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(6px);padding:8px 15px;border-radius:30px;color:var(--fg)}
+.pill b{color:var(--orange);font-weight:600}
+.hero h1{font-family:"Sora";font-weight:800;font-size:clamp(42px,7.5vw,96px);line-height:1;letter-spacing:-.035em;max-width:16ch}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l span{display:block;transform:translateY(110%);animation:lu .9s var(--ease) forwards}
+.hero h1 .l:nth-child(2) span{animation-delay:.12s}.hero h1 .l:nth-child(3) span{animation-delay:.24s}
+.hero h1 em{font-style:normal;color:var(--orange)}
+@keyframes lu{to{transform:none}}
+.hero p{margin-top:26px;font-size:clamp(16px,1.7vw,19px);color:var(--sky);max-width:50ch;line-height:1.6;opacity:0;animation:fu .8s var(--ease) .5s forwards}
+.hbtns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;opacity:0;animation:fu .8s var(--ease) .62s forwards}
+.btn-p{background:var(--orange);color:#fff;padding:16px 32px;border-radius:32px;font-weight:600;font-size:15px;transition:.22s;display:inline-flex;align-items:center;gap:9px}
+.btn-p:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,107,53,.42)}
+.btn-g{color:var(--fg);font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:10px}
+.btn-g .pl{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:.25s}
+.btn-g:hover .pl{background:var(--orange);border-color:var(--orange)}
+.trust{background:var(--navy2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;flex-wrap:wrap}
+.trust .item{display:flex;align-items:center;gap:12px;font-size:14.5px;color:var(--sky)}
+.trust .item b{color:var(--orange);font-family:"Sora"}
+.sec{padding:clamp(72px,10vw,124px) 0;position:relative}
+.k{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;font-weight:600}
+.sec-head{text-align:center;max-width:660px;margin:0 auto 60px}
+.sec-head h2{font-family:"Sora";font-weight:800;font-size:clamp(30px,5vw,54px);letter-spacing:-.03em;line-height:1.02}
+.sec-head p{margin-top:18px;color:var(--mute);font-size:16px;line-height:1.6}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}.reveal[data-d="3"]{transition-delay:.3s}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--navy2);border:1px solid var(--line);border-radius:20px;padding:34px 30px;transition:transform .4s var(--ease),border-color .3s}
+.card:hover{transform:translateY(-8px);border-color:var(--orange)}
+.card .ic{width:56px;height:56px;border-radius:15px;background:rgba(255,107,53,.14);display:grid;place-items:center;color:var(--orange);font-size:26px;margin-bottom:22px}
+.card h3{font-family:"Sora";font-size:22px;font-weight:600}
+.card p{margin-top:12px;color:var(--mute);font-size:14.5px;line-height:1.65}
+.card .lk{margin-top:20px;font-size:14px;font-weight:600;color:var(--orange);display:inline-flex;align-items:center;gap:8px;transition:gap .25s}
+.card:hover .lk{gap:14px}
+.ba-wrap{max-width:900px;margin:0 auto}
+.ba{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;user-select:none;border:1px solid var(--line);cursor:ew-resize;background:linear-gradient(135deg,#1b3247,#0d1b2a)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .afterimg{clip-path:inset(0 0 0 var(--split,50%))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:3px;background:var(--orange);z-index:3;pointer-events:none}
+.ba .handle::before{content:"⟺";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:var(--orange);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.ba .lbl{position:absolute;bottom:16px;z-index:2;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:rgba(13,27,42,.8);padding:6px 12px;border-radius:20px;color:#fff}
+.ba .lbl.b{left:16px}.ba .lbl.a{right:16px}
+.ba-cap{text-align:center;margin-top:20px;color:var(--mute);font-size:14.5px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.type{position:relative;border-radius:18px;aspect-ratio:3/4;border:1px solid var(--line)}
+.type img{border-radius:18px;transition:transform .7s var(--ease)}
+.type:hover img{transform:scale(1.08)}
+.type .grad{position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 45%,rgba(13,27,42,.92));border-radius:18px}
+.type .cap{position:absolute;left:20px;bottom:18px;z-index:2}
+.type .cap b{font-family:"Sora";font-size:17px;font-weight:600;display:block}
+.type .cap span{font-size:12.5px;color:var(--sky)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{position:relative;padding-top:30px;border-top:2px solid var(--line);transition:border-color .3s}
+.step:hover{border-color:var(--orange)}
+.step .no{font-family:"Sora";font-weight:800;font-size:15px;color:var(--orange)}
+.step h4{font-family:"Sora";font-size:18px;font-weight:600;margin-top:12px}
+.step p{margin-top:10px;color:var(--mute);font-size:14px;line-height:1.6}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:var(--navy2);border:1px solid var(--line);border-radius:20px;padding:30px 28px}
+.rev .stars{color:var(--orange);font-size:16px;letter-spacing:2px}
+.rev p{margin-top:16px;font-size:15px;line-height:1.6;color:var(--fg)}
+.rev .who{margin-top:22px;display:flex;align-items:center;gap:12px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--navy3);display:grid;place-items:center;font-family:"Sora";font-weight:600;color:var(--orange)}
+.rev .who b{font-size:14.5px;display:block;font-weight:600}
+.rev .who span{font-size:13px;color:var(--mute)}
+.est{background:linear-gradient(135deg,var(--orange),var(--orange2));border-radius:26px;padding:clamp(40px,6vw,72px);text-align:center;position:relative;overflow:hidden}
+.est::before,.est::after{content:"";position:absolute;border-radius:50%;border:30px solid rgba(255,255,255,.09)}
+.est::before{width:260px;height:260px;top:-100px;left:-80px}
+.est::after{width:200px;height:200px;bottom:-90px;right:-60px}
+.est h2{font-family:"Sora";font-weight:800;font-size:clamp(30px,5vw,56px);letter-spacing:-.03em;line-height:1;color:#fff;position:relative}
+.est p{margin:18px auto 0;max-width:44ch;color:rgba(255,255,255,.9);font-size:16px;line-height:1.6;position:relative}
+.est .btn-w{margin-top:34px;background:#fff;color:var(--navy);padding:17px 36px;border-radius:34px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:10px;transition:.22s;position:relative}
+.est .btn-w:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.foot{background:var(--navy2);border-top:1px solid var(--line);padding:66px 0 40px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:40px}
+.foot p{color:var(--mute);font-size:14px;line-height:1.7;margin-top:18px;max-width:32ch}
+.foot h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;font-weight:600}
+.foot a{display:block;font-size:14.5px;padding:6px 0;color:var(--fg);transition:color .2s}
+.foot a:hover{color:var(--orange)}
+.foot .hours{color:var(--mute);font-size:14px;line-height:2}.foot .hours b{color:var(--fg)}
+.social{display:flex;gap:12px;margin-top:20px}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--mute);transition:.25s}
+.social a:hover{color:var(--orange);border-color:var(--orange);transform:translateY(-2px)}
+.foot-base{margin-top:52px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--mute);font-size:13px;flex-wrap:wrap;gap:12px}
+.foot-base a{color:var(--mute)}.foot-base a:hover{color:var(--orange)}
+@media(max-width:900px){.nlinks,.ncall .ph3{display:none}.burger{display:flex}.svc,.reviews{grid-template-columns:1fr}.types{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .l span{transform:none}.roof-draw path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<div id="loader"><div>
+  <svg class="roof-draw" viewBox="0 0 120 70"><path d="M10 60 L60 15 L110 60 M22 60 L22 44 L38 44 L38 60"/></svg>
+  <div class="load-t dsp">SUMMIT <span>ROOFING</span></div>
+</div></div>
+
+<div id="prog"></div>
+
+<nav class="nav" id="nav"><div class="wrap">
+  <a href="#" class="brand">
+    <svg viewBox="0 0 32 32" fill="none"><path d="M4 22 L16 8 L28 22" stroke="#ff6b35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22 V16 H14 V22" stroke="#eaf0f6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    SUMMIT
+  </a>
+  <div class="nlinks">
+    <a href="#services">Services</a>
+    <a href="#work">Our work</a>
+    <a href="#types">Roof types</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+  <div class="ncall">
+    <span class="ph3">(519) 555-0176</span>
+    <a href="#estimate" class="ncta">Free estimate</a>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg" data-bg="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"></div>
+  <canvas id="house"></canvas>
+  <canvas id="rain"></canvas>
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="pill"><b>★ 4.9</b> · 600+ Google reviews</span>
+      <span class="pill"><b>◆</b> Lifetime workmanship warranty</span>
+      <span class="pill"><b>⚡</b> 24/7 emergency service</span>
+    </div>
+    <h1 class="dsp">
+      <span class="l"><span>Protecting homes</span></span>
+      <span class="l"><span>from the</span></span>
+      <span class="l"><span><em>top down.</em></span></span>
+    </h1>
+    <p>Premium residential and commercial roofing done right the first time — from a single leak to a full replacement, backed by a warranty most contractors won't match.</p>
+    <div class="hbtns">
+      <a href="#estimate" class="btn-p">Get your free estimate →</a>
+      <a href="#work" class="btn-g"><span class="pl">▶</span> See our work</a>
+    </div>
+  </div>
+</header>
+
+<section class="trust"><div class="wrap">
+  <div class="item"><b class="dsp">18 yrs</b> serving the region</div>
+  <div class="item"><b class="dsp">4,200+</b> roofs installed</div>
+  <div class="item"><b class="dsp">Licensed</b> &amp; fully insured</div>
+  <div class="item"><b class="dsp">GAF</b> certified installer</div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap">
+  <div class="sec-head reveal">
+    <div class="k">What we do</div>
+    <h2 class="dsp">Every roof. Every problem. Handled.</h2>
+    <p>Whether it's storm damage at 2am or a planned replacement, you get the same crew, the same standard, and the same warranty.</p>
+  </div>
+  <div class="svc">
+    <div class="card reveal"><div class="ic">⌂</div><h3 class="dsp">Roof replacement</h3><p>Full tear-off and installation with premium architectural shingles, metal, or flat systems — cleaned up like we were never there.</p><span class="lk">Learn more →</span></div>
+    <div class="card reveal" data-d="1"><div class="ic">⚡</div><h3 class="dsp">Emergency repairs</h3><p>Storm damage, active leaks, missing shingles. We tarp fast and repair right — available 24/7, holidays included.</p><span class="lk">Call now →</span></div>
+    <div class="card reveal" data-d="2"><div class="ic">◈</div><h3 class="dsp">Insurance claims</h3><p>We document the damage, meet your adjuster on site, and handle the paperwork so your claim actually gets approved.</p><span class="lk">How it works →</span></div>
+  </div>
+</div></section>
+
+<section class="sec" id="work" style="padding-top:0"><div class="wrap">
+  <div class="sec-head reveal">
+    <div class="k">Before &amp; after</div>
+    <h2 class="dsp">Drag to see the difference.</h2>
+  </div>
+  <div class="ba-wrap reveal">
+    <div class="ba" id="ba" style="--split:50%">
+      <img class="beforeimg" src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1200&q=80" alt="Roof before" onerror="this.style.background='linear-gradient(135deg,#3a4a55,#1b2c38)';this.removeAttribute('src')">
+      <img class="afterimg" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80" alt="Roof after" onerror="this.style.background='linear-gradient(135deg,#2a5a7a,#123246)';this.removeAttribute('src')">
+      <div class="lbl b">Before</div>
+      <div class="lbl a">After</div>
+      <div class="handle"></div>
+    </div>
+    <p class="ba-cap">Full architectural-shingle replacement · completed in 2 days · Waterloo</p>
+  </div>
+</div></section>
+
+<section class="sec" id="types" style="padding-top:0"><div class="wrap">
+  <div class="sec-head reveal">
+    <div class="k">Roof types</div>
+    <h2 class="dsp">The right system for your home.</h2>
+    <p>We install and service every major roofing system — and we'll tell you honestly which one fits your home and budget.</p>
+  </div>
+  <div class="types">
+    <figure class="type ph reveal" style="--tone:linear-gradient(160deg,#1b3247,#0d1b2a)"><img data-ph src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80" alt="Architectural shingle roof"><div class="grad"></div><div class="cap"><b class="dsp">Architectural shingle</b><span>Most popular · 30–50yr</span></div></figure>
+    <figure class="type ph reveal" data-d="1" style="--tone:linear-gradient(160deg,#204055,#0d1b2a)"><img data-ph src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80" alt="Standing seam metal roof"><div class="grad"></div><div class="cap"><b class="dsp">Standing-seam metal</b><span>50+ yr lifespan</span></div></figure>
+    <figure class="type ph reveal" data-d="2" style="--tone:linear-gradient(160deg,#17303f,#0d1b2a)"><img data-ph src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Flat commercial roof"><div class="grad"></div><div class="cap"><b class="dsp">Flat / TPO</b><span>Commercial &amp; modern</span></div></figure>
+    <figure class="type ph reveal" data-d="3" style="--tone:linear-gradient(160deg,#243a2c,#0d1b2a)"><img data-ph src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=600&q=80" alt="Cedar shake roof"><div class="grad"></div><div class="cap"><b class="dsp">Cedar shake</b><span>Premium character</span></div></figure>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head reveal">
+    <div class="k">How it works</div>
+    <h2 class="dsp">From estimate to done in four steps.</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="no dsp">STEP 01</div><h4 class="dsp">Free inspection</h4><p>We climb up, document everything with photos, and give you a written estimate — no pressure.</p></div>
+    <div class="step reveal" data-d="1"><div class="no dsp">STEP 02</div><h4 class="dsp">Pick your system</h4><p>We walk you through material and colour options with real samples, not a brochure.</p></div>
+    <div class="step reveal" data-d="2"><div class="no dsp">STEP 03</div><h4 class="dsp">Installation</h4><p>Our own crews — never subs — install in days, not weeks, and protect your landscaping.</p></div>
+    <div class="step reveal" data-d="3"><div class="no dsp">STEP 04</div><h4 class="dsp">Final walkthrough</h4><p>Magnetic nail sweep, full cleanup, and your lifetime workmanship warranty in writing.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="sec-head reveal">
+    <div class="k">Reviews</div>
+    <h2 class="dsp">Neighbours who trust their roof to us.</h2>
+  </div>
+  <div class="reviews">
+    <div class="rev reveal"><div class="stars">★★★★★</div><p>"A tree came through our roof in a storm. Summit had it tarped that night and fully replaced within the week. They dealt with our insurance directly."</p><div class="who"><div class="av">JM</div><div><b>Jenna M.</b><span>Kitchener</span></div></div></div>
+    <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>"Three quotes, and Summit was the only one who got on the roof before quoting. No surprises, spotless cleanup, and the crew was polite to my kids."</p><div class="who"><div class="av">DP</div><div><b>David P.</b><span>Waterloo</span></div></div></div>
+    <div class="rev reveal" data-d="2"><div class="stars">★★★★★</div><p>"The standing-seam metal roof they installed looks incredible and the workmanship warranty gave us real peace of mind. Worth every dollar."</p><div class="who"><div class="av">SR</div><div><b>Sarah R.</b><span>Guelph</span></div></div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="estimate" style="padding-top:0"><div class="wrap">
+  <div class="est reveal">
+    <h2 class="dsp">Your free estimate is one call away.</h2>
+    <p>Same-week inspections. Honest pricing. And if your roof has years left in it, we'll tell you that too.</p>
+    <a href="tel:+15195550176" class="btn-w">Call (519) 555-0176 →</a>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a href="#" class="brand">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M4 22 L16 8 L28 22" stroke="#ff6b35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22 V16 H14 V22" stroke="#eaf0f6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        SUMMIT
+      </a>
+      <p>Premium residential and commercial roofing serving Waterloo, Kitchener, Guelph, and surrounding areas since 2008.</p>
+      <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Google">G</a></div>
+    </div>
+    <div><h5>Services</h5><a href="#">Replacement</a><a href="#">Repairs</a><a href="#">Emergency</a><a href="#">Insurance claims</a></div>
+    <div><h5>Roof types</h5><a href="#">Shingle</a><a href="#">Metal</a><a href="#">Flat / TPO</a><a href="#">Cedar shake</a></div>
+    <div><h5>Hours &amp; contact</h5><div class="hours"><b>(519) 555-0176</b><br>hello@summitroofing.co<br>Mon–Fri · 7am–6pm<br>Emergency · 24/7</div></div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Summit Roofing Co. · Licensed &amp; insured · Demo site</span>
+    <span><a href="https://vectorstudio.tech">Crafted by Vector Studio</a></span>
+  </div>
+</div></footer>
+
+<script src="assets/site.js"></script>
+<script>
+/* before-after slider */
+(function(){
+  var ba=document.getElementById('ba');if(!ba)return;var drag=false;
+  function set(x){var r=ba.getBoundingClientRect();var p=(x-r.left)/r.width*100;p=Math.max(2,Math.min(98,p));ba.style.setProperty('--split',p+'%');var a=ba.querySelector('.afterimg');if(a)a.style.clipPath='inset(0 0 0 '+p+'%)';}
+  ba.addEventListener('mousedown',function(e){drag=true;set(e.clientX);});
+  addEventListener('mousemove',function(e){if(drag)set(e.clientX);});
+  addEventListener('mouseup',function(){drag=false;});
+  ba.addEventListener('touchstart',function(e){drag=true;set(e.touches[0].clientX);},{passive:true});
+  ba.addEventListener('touchmove',function(e){if(drag)set(e.touches[0].clientX);},{passive:true});
+  addEventListener('touchend',function(){drag=false;});
+})();
+/* rain canvas */
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var cv=document.getElementById('rain');if(!cv)return;var ctx=cv.getContext('2d');var W,H,drops;
+  function resize(){W=cv.width=innerWidth;H=cv.height=cv.parentElement.offsetHeight;
+    drops=Array.from({length:Math.min(160,Math.floor(W/9))},function(){return{x:Math.random()*W,y:Math.random()*H,l:8+Math.random()*14,v:6+Math.random()*7,o:.1+Math.random()*.25};});}
+  resize();addEventListener('resize',resize);
+  (function draw(){ctx.clearRect(0,0,W,H);ctx.lineCap='round';
+    drops.forEach(function(d){ctx.strokeStyle='rgba(200,220,240,'+d.o+')';ctx.lineWidth=1.1;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1.5,d.y+d.l);ctx.stroke();d.y+=d.v;d.x-=.4;if(d.y>H){d.y=-d.l;d.x=Math.random()*W;}});
+    requestAnimationFrame(draw);})();
+})();
+/* ---- 3D: procedural house with pitched roof ---- */
+loadThree(function(){
+  var cv=document.getElementById('house');if(!cv||!window.THREE)return;
+  var rn=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});rn.setPixelRatio(Math.min(devicePixelRatio,2));
+  var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);cam.position.set(6,3.6,8);cam.lookAt(0,1.2,0);
+  sc.add(new THREE.AmbientLight(0x9fb6cc,.7));
+  var key=new THREE.DirectionalLight(0xffffff,.85);key.position.set(5,10,6);sc.add(key);
+  var warm=new THREE.PointLight(0xff6b35,1.3,40);warm.position.set(-5,4,4);sc.add(warm);
+  var house=new THREE.Group();sc.add(house);
+  var wallMat=new THREE.MeshStandardMaterial({color:0xe8eef4,metalness:.05,roughness:.85});
+  var roofMat=new THREE.MeshStandardMaterial({color:0xff6b35,metalness:.3,roughness:.5});
+  var doorMat=new THREE.MeshStandardMaterial({color:0x132534,metalness:.2,roughness:.6});
+  /* body */
+  var body=new THREE.Mesh(new THREE.BoxGeometry(3.4,2,2.6),wallMat);body.position.y=1;house.add(body);
+  /* pitched roof: triangular prism via extruded shape */
+  var shape=new THREE.Shape();shape.moveTo(-2,0);shape.lineTo(2,0);shape.lineTo(0,1.5);shape.lineTo(-2,0);
+  var roof=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:2.8,bevelEnabled:false}),roofMat);
+  roof.rotation.y=Math.PI/2;roof.position.set(1.4,2,0);house.add(roof);
+  /* chimney */
+  var chim=new THREE.Mesh(new THREE.BoxGeometry(.4,1,.4),wallMat);chim.position.set(-.8,3,.4);house.add(chim);
+  /* door */
+  var door=new THREE.Mesh(new THREE.BoxGeometry(.7,1.2,.08),doorMat);door.position.set(0,.6,1.32);house.add(door);
+  /* windows */
+  var winMat=new THREE.MeshStandardMaterial({color:0x1b3247,metalness:.6,roughness:.2});
+  [[-1.1,1.1],[1.1,1.1]].forEach(function(p){var w=new THREE.Mesh(new THREE.BoxGeometry(.7,.7,.08),winMat);w.position.set(p[0],p[1],1.32);house.add(w);});
+  /* ground */
+  var ground=new THREE.Mesh(new THREE.CircleGeometry(4,32),new THREE.MeshStandardMaterial({color:0x0d1b2a,metalness:.1,roughness:.9}));
+  ground.rotation.x=-Math.PI/2;ground.position.y=0;sc.add(ground);
+  house.position.set(0,-.4,0);
+  var tmx=0,tmy=0;addEventListener('mousemove',function(e){tmx=(e.clientX/innerWidth-.5);tmy=(e.clientY/innerHeight-.5);});
+  function resize(){rn.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();}
+  resize();addEventListener('resize',resize);
+  (function anim(){requestAnimationFrame(anim);
+    house.rotation.y+=((0.5+tmx*0.7)-house.rotation.y)*.04;
+    house.position.y=-.4+Math.sin(performance.now()*.0012)*.06;
+    cam.position.y=3.6+tmy*1;cam.lookAt(0,1,0);
+    rn.render(sc,cam);})();
+});
+</script>
+</body>
+</html>

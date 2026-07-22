@@ -1,0 +1,19 @@
+/*
+  Vector Studio — bulletproof image system
+  ----------------------------------------
+  Any <img data-ph> that fails to load is hidden and its parent's
+  designed gradient (set via inline --tone) shows instead. No broken
+  icons ever reach a client's screen.
+
+  Usage:
+    <figure class="ph" style="--tone:linear-gradient(135deg,#1b3247,#0d1b2a)">
+      <img data-ph src="..." alt="...">
+    </figure>
+*/
+.ph{position:relative;overflow:hidden;background:var(--tone,linear-gradient(135deg,#222,#111));background-size:cover;background-position:center}
+.ph::after{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 12px,transparent 12px 24px);
+  opacity:0;transition:opacity .3s;pointer-events:none}
+.ph.img-failed::after{opacity:1}
+.ph > img[data-ph]{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.ph.img-failed > img[data-ph]{opacity:0}
