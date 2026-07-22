@@ -49,7 +49,6 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(13,27,42,.55),rgba(13,27,42,.9)),var(--bg-img,linear-gradient(160deg,#1b3247,#0d1b2a)) center/cover;animation:kb 22s ease-in-out infinite alternate}
 .hero-bg.bg-failed{background:linear-gradient(180deg,rgba(13,27,42,.4),rgba(13,27,42,.85)),linear-gradient(160deg,#1b3247,#0d1b2a 75%)}
 @keyframes kb{from{transform:scale(1.05)}to{transform:scale(1)}}
-#house{position:absolute;inset:0;z-index:1;pointer-events:none}
 #rain{position:absolute;inset:0;z-index:2;pointer-events:none}
 .hero .wrap{position:relative;z-index:3;width:100%;padding-top:80px}
 .badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;opacity:0;animation:fu .7s var(--ease) .2s forwards}
@@ -172,7 +171,6 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 
 <header class="hero">
   <div class="hero-bg" data-bg="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"></div>
-  <canvas id="house"></canvas>
   <canvas id="rain"></canvas>
   <div class="wrap">
     <div class="badge-row">
@@ -321,7 +319,6 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
     drops.forEach(function(d){ctx.strokeStyle='rgba(200,220,240,'+d.o+')';ctx.lineWidth=1.1;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1.5,d.y+d.l);ctx.stroke();d.y+=d.v;d.x-=.4;if(d.y>H){d.y=-d.l;d.x=Math.random()*W;}});
     requestAnimationFrame(draw);})();
 })();
-/* ---- 3D: procedural house with pitched roof ---- */
 loadThree(function(){
   var cv=document.getElementById('house');if(!cv||!window.THREE)return;
   var rn=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});rn.setPixelRatio(Math.min(devicePixelRatio,2));
@@ -356,8 +353,6 @@ loadThree(function(){
   (function anim(){requestAnimationFrame(anim);
     house.rotation.y+=((0.5+tmx*0.7)-house.rotation.y)*.04;
     house.position.y=-.4+Math.sin(performance.now()*.0012)*.06;
-    cam.position.y=3.6+tmy*1;cam.lookAt(0,1,0);
-    rn.render(sc,cam);})();
 });
 </script>
 </body>
